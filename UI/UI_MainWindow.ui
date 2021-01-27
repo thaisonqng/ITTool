@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1471</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777214</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>TS tool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>E:/Picture/Icon/avatar/employee9.png</normaloff>E:/Picture/Icon/avatar/employee9.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="layoutMain">
+      <item row="0" column="1">
+       <widget class="QLCDNumber" name="lcdNumber">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QToolBox" name="toolBoxMenu">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="toolBoxMenuPage1_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>200</width>
+           <height>545</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Page</string>
+         </attribute>
+         <widget class="QListWidget" name="listWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>201</width>
+            <height>371</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>New Item</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New Item</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New Item</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New Item</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New Item</string>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="toolBoxMenuPage1">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>200</width>
+           <height>545</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string/>
+         </attribute>
+         <widget class="QListWidget" name="MenuCard">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>200</width>
+            <height>371</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>All Staff</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/Favorites (1)/avatar.png</normaloff>E:/Picture/Icon/Favorites (1)/avatar.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>All Card</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/Favorites (1)/id-card.png</normaloff>E:/Picture/Icon/Favorites (1)/id-card.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Import</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/Favorites (1)/icons8-database-import-500.png</normaloff>E:/Picture/Icon/Favorites (1)/icons8-database-import-500.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New - Update Card</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/Favorites (1)/icons8-add-file-500.png</normaloff>E:/Picture/Icon/Favorites (1)/icons8-add-file-500.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Print</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/Favorites (1)/printer.png</normaloff>E:/Picture/Icon/Favorites (1)/printer.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="toolBoxMenuPage2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>200</width>
+           <height>545</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string/>
+         </attribute>
+         <widget class="QListWidget" name="MenuScan">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>201</width>
+            <height>361</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>Scan Detail</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/Favorites (1)/ic_download.png</normaloff>E:/Picture/Icon/Favorites (1)/ic_download.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Absent</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Present</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Card Forgot</string>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="toolBoxMenuPage3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>200</width>
+           <height>545</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string/>
+         </attribute>
+         <widget class="QListWidget" name="MenuIT">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>201</width>
+            <height>331</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Inventory software</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/content.png</normaloff>E:/Picture/Icon/content.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Update Window</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/exchange.png</normaloff>E:/Picture/Icon/exchange.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Update CPA</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/sneakers.png</normaloff>E:/Picture/Icon/sneakers.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Computer Info</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>E:/Picture/Icon/info.png</normaloff>E:/Picture/Icon/info.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="toolBoxMenuPage4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>200</width>
+           <height>545</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string/>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="2" rowspan="2" colspan="2">
+       <widget class="QWidget" name="frame" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>2000</width>
+          <height>1000</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1471</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

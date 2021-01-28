@@ -26,7 +26,10 @@ class SoftwareInventory(QtWidgets.QFrame, Ui_FrameSoftwareInventory):
         self.functionsPS = FunctionsPS()
         self.functionJson = FunctionJson()
         self.DBSoftware = DBSoftware()
-        self.PsScripFile = "PowerShell\\PsScrip.ps1"
+        self.PsScripFolder = os.environ['USERPROFILE'] + "\\AppData\\Local\\ITTool\\ScriptPS"
+        self.PsScripFile = self.PsScripFolder + "\\PsScrip.ps1"
+        self.GetRemoteProgram = self.PsScripFolder + "GetRemoteProgram.ps1"
+        self.Folder = os.environ['USERPROFILE'] + "\\AppData\\Local\\ITTool\\SoftwareInventory\\"
         self.MainFolder = os.environ['USERPROFILE'] + "\\AppData\\Local\\ITTool\\"
         self.SoftwareInventoryFolder = self.MainFolder + "\\SoftwareInventory\\"
         self.ComputersAD = list()
@@ -54,7 +57,8 @@ class SoftwareInventory(QtWidgets.QFrame, Ui_FrameSoftwareInventory):
         self.database_Software = 'Software'
         self.stringConnection = 'mssql+pymssql://' + self.server_name + '\SQLEXPRESS/'
     def Init(self):
-        self.functionsPS.GetADComputerToJson(self.lineEditPCname.text())
+
+        self.functionsPS.RunPowerShellScript("GetADComputerToJson", self.lineEditPCname.text())
         self.ComputersAD = self.functionJson.JsonToList(self.MainFolder + "Computers.json", "Name")
         self.SetCheckBoxComputers()
         self.ComputersInventory = []
@@ -90,8 +94,14 @@ class SoftwareInventory(QtWidgets.QFrame, Ui_FrameSoftwareInventory):
         self.tableWidget.setHorizontalHeaderLabels(self.HeaderList)
         self.tableWidget.setColumnCount(len(self.HeaderList))
         start  =  datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+        param = "-Computers '"
+        i=0
+        while  i < len(self.ComputersInventory) -1:
+            param += self.ComputersInventory[i] + ","
+            i += 1
+        param += self.ComputersInventory[i] + "'"
         if self.comboBoxType.currentText() == 'Scan':
-            self.functionsPS.GetSoftwareInstalled(self.ComputersInventory)
+            self.functionsPS.RunPowerShellScript("GetRemoteProgram", param)
             self.ComputersOK = self.functionJson.JsonGetListIventorySwOK()
             self.ComputersOffline = self.functionJson.JsonGetListIventorySwOffline()
             self.ComputersError = self.functionJson.JsonGetListIventorySwError()
@@ -102,7 +112,6 @@ class SoftwareInventory(QtWidgets.QFrame, Ui_FrameSoftwareInventory):
                     self.DBSoftware.WriteDataSoftwareInstalledToDB(computer, data)
                     self.LoadDBToTable(computer)
         else:
-
             for computer in self.ComputersInventory:
                 self.LoadDBToTable(computer)
         self.tableWidget.setSortingEnabled(True)

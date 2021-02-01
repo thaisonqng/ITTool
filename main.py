@@ -11,10 +11,7 @@ def main():
     window.show()
     app.exec_()
 
-
 if __name__ == '__main__':
-
-
     MainFolder = os.environ['USERPROFILE'] + "\\AppData\\Local\\ITTool\\"
     SoftwareInventoryFolder = MainFolder + "\\SoftwareInventory\\"
     projectFolderScriptPS = "PowerShell\\"
@@ -27,20 +24,15 @@ if __name__ == '__main__':
         os.makedirs(localFolderScriptPS)
     if not os.path.exists(SoftwareInventoryFolder):
         os.makedirs(SoftwareInventoryFolder)
-    try :
-        if not os.path.exists(srvFolderScriptPS):
-            os.makedirs(srvFolderScriptPS)
+
+    if os.path.exists(projectFolderScriptPS):
         shutil.rmtree(srvFolderScriptPS)
         shutil.copytree(projectFolderScriptPS, srvFolderScriptPS)
-
-        shutil.rmtree(localFolderScriptPS)
-        shutil.copytree(srvFolderScriptPS, localFolderScriptPS)
-    except:
-        print("__main__ ERROR make dir")
-
-    try :
+    shutil.rmtree(localFolderScriptPS)
+    shutil.copytree(srvFolderScriptPS, localFolderScriptPS)
+    try:
         DB().InitAllDB()
     except:
         print("")
-    main()
 
+    main()

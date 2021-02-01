@@ -84,61 +84,13 @@
         <property name="lineWidth">
          <number>2</number>
         </property>
-        <widget class="QWidget" name="toolBoxMenuPage1_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>200</width>
-           <height>545</height>
-          </rect>
-         </property>
-         <attribute name="label">
-          <string>Page</string>
-         </attribute>
-         <widget class="QListWidget" name="listWidget">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>201</width>
-            <height>371</height>
-           </rect>
-          </property>
-          <item>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-          </item>
-         </widget>
-        </widget>
         <widget class="QWidget" name="toolBoxMenuPage1">
          <property name="geometry">
           <rect>
            <x>0</x>
            <y>0</y>
            <width>200</width>
-           <height>545</height>
+           <height>578</height>
           </rect>
          </property>
          <attribute name="label">
@@ -222,7 +174,7 @@
            <x>0</x>
            <y>0</y>
            <width>200</width>
-           <height>545</height>
+           <height>578</height>
           </rect>
          </property>
          <attribute name="label">
@@ -276,7 +228,7 @@
            <x>0</x>
            <y>0</y>
            <width>200</width>
-           <height>545</height>
+           <height>578</height>
           </rect>
          </property>
          <attribute name="label">
@@ -335,7 +287,7 @@
            <x>0</x>
            <y>0</y>
            <width>200</width>
-           <height>545</height>
+           <height>578</height>
           </rect>
          </property>
          <attribute name="label">

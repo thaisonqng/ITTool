@@ -3,45 +3,11 @@ Function GetADComputerToJson {
     param (
             [String]$like
         )
-#    $ListOnline = @()
-#    $Listoffline = @()
     $Folder=$env:USERPROFILE+"\AppData\Local\ITTool"
 
     get-ADComputer -Filter { Name -Like $like } | Select Name,DistinguishedName | ConvertTo-Json | Set-Content $Folder\Computers.json
-#    if ((Test-Connection -ComputerName (get-ADComputer -Filter { Name -Like $like } | Select Name) -Count 2 -Quiet) -eq $true){
-#
-#
-#    }
-    return "333333333333333333333333"
 }
 
-Function GetADComputerToJson1 {
-    param (
-            [String]$like
-        )
-#    $ListOnline = @()
-#    $Listoffline = @()
-    $Folder=$env:USERPROFILE+"\AppData\Local\ITTool\SoftwareInventory"
-    $Result =  get-ADComputer -Filter { Name -Like $like } | Select Name,DistinguishedName
-    $Result | ConvertTo-Json | Set-Content $Folder\Computers.json
-    return $Result
-#    if ((Test-Connection -ComputerName (get-ADComputer -Filter { Name -Like $like } | Select Name) -Count 2 -Quiet) -eq $true){
-#
-#
-#    }
-}
-Function RemoveSoftwareUninstallString1 {
-        param (
-        [String]$param
-    )
-
-         $computerName = $param.Split(",")[0]
-        $UninstallString = $param.Split(",")[1]
-          Write-Host "param : $param"
-          Write-Host "computerName : $computerName"
-          Write-Host "UninstallString : $UninstallString"
-        Invoke-Command -ComputerName $computerName -ScriptBlock {Start-Process -FilePath $UninstallString -ArgumentList '/S' -Wait}
-}
 
 Function RemoveSoftwareUninstallString {
         param (
@@ -63,18 +29,7 @@ Function RemoveSoftwareIdentifyingNumber {
      Write-Host "softwareName: $id"
     (Get-WmiObject Win32_Product -ComputerName $computerName | Where-Object {$_.IdentifyingNumber -eq "{"+$id+"}"}).Uninstall()
      $Folder = $env:USERPROFILE + "\AppData\Local\ITTool\SoftwareInventory"
-#    $sw = Get-WmiObject Win32_Product -ComputerName $ComputerName | Where-Object {$_.IdentifyingNumber -eq $id}
-#     Write-Host "$sw"
-#    if ($sw) {
-#      $sw.Uninstall()
-#      "OK" | ConvertTo-Json | Set-Content $Folder\LogRemoveSW.JSON
-#      return $true
-#    }
-#    else {
-#      Write-Host "$sw is not installed on   $ComputerName"
-#      "FAIL" | ConvertTo-Json | Set-Content $Folder\LogRemoveSW.JSON
-#      return $false
-#    }
+
 }
 Function GetSoftwareInstalled {
     param (

@@ -20,7 +20,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.lcdNumber.setDigitCount(8)  # change the number of digits displayed
         self.db = DB()
 
-        MainMenu = ['HR', 'Card Management', 'Scanned Detail', 'IT Tools', 'Setting']
+        MainMenu = [ 'Card Management', 'Scanned Detail', 'IT Tools', 'Setting']
 
         index = 0
         for submenu in MainMenu:
@@ -52,13 +52,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.newCardUpdate = NewCardUpdate()
         select = self.MenuCard.currentItem().text()
         self.frame.setVisible(False)
-        self.SetInform("")
         if select == 'All Card':
             self.db.LoadTable(self.tableData, 'Card')
         if select == 'All Staff':
             self.db.LoadTable(self.tableData, 'Staff')
         elif select == 'New - Update Card':
-            self.SetInform("Put picture <staffID.png> in :\n\\\\vnqn-test\\DataBase\\Card\\Picture\\")
+
             self.frame.setLayout(self.newCardUpdate.layoutNewUpdateCard)
             self.frame.setVisible(True)
 
@@ -68,7 +67,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         select = self.MenuScan.currentItem().text()
         if select == 'Scan Detail':
             self.db.LoadTable(self.tableData, 'ScanedDetail')
-            self.SetInform("MenuScanEvent")
             self.frame.setLayout(self.LoadScan.layoutLoadScan)
             self.frame.setVisible(True)
         elif select == 'New Card33333':
